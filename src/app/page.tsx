@@ -1,65 +1,62 @@
-import Image from "next/image";
+import { ContentBox } from "@/components/ContentBox"
+import { TitleBox } from "@/components/TitleBox"
+import Link from "next/link"
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+const page = () => {
+    return (
+        <div>
+            <ContentBox>
+
+                <TitleBox 
+                    subtitle="Bem vindo(a) à"
+                    title="Leviatã Wiki"
+                />
+                <div
+                    className="flex flex-col gap-5 text-[15px] leading-relaxed"
+                    style={{ color: "rgba(220, 235, 245, 0.85)" }}
+                >
+                    <p>
+                        Aqui você encontrará as mais diversas informações sobre o RPG de mesa{" "}
+                        <span className="text-[#8FC3D5] font-medium">OP — Leviatã</span>: um mundo
+                        construído sobre as águas turbulentas de Grand Line, onde piratas, marinha e
+                        forças ocultas disputam o destino dos mares.
+                    </p>
+
+                    <p>
+                        O objetivo desta biblioteca é ser um ponto de referência para os players —
+                        seja para rever detalhes de sessões passadas, estudar PDNs (Personagens do
+                        Narrador) antes de um encontro decisivo, ou simplesmente se aprofundar na
+                        lore e nas facções que moldam a narrativa. Informações que seriam difíceis
+                        de abordar à mesa têm espaço aqui.
+                    </p>
+
+                    <div
+                        className="rounded-lg px-5 py-4 mt-1"
+                        style={{
+                            background: "rgba(143,195,213,0.07)",
+                            border: "1px solid rgba(143,195,213,0.18)",
+                        }}
+                    >
+                        <p className="text-sm text-[#8FC3D5]/80 mb-1 uppercase tracking-widest" style={{ fontFamily: "'Cinzel', serif", fontSize: "10px" }}>
+                            Por onde começar
+                        </p>
+                        <p className="text-sm" style={{ color: "rgba(220,235,245,0.8)" }}>
+                            Se você está chegando agora ou não sabe ao certo por onde começar,
+                            recomendamos conhecer primeiro os protagonistas da história:
+                        </p>
+                        <Link
+                            href="/bando-eclipse"
+                            className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-[#8FC3D5] hover:text-white transition-colors group"
+                            style={{ fontFamily: "'Cinzel', serif" }}
+                        >
+                            <span className="w-4 h-px bg-[#8FC3D5] group-hover:w-6 transition-all duration-300" />
+                            Bando do Eclipse
+                        </Link>
+                    </div>
+                </div>
+            </ContentBox>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    )
 }
+
+export default page

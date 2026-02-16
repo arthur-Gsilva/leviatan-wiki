@@ -54,7 +54,7 @@ export const Header = () => {
 
                         <Link href="/" className="flex items-center gap-2 shrink-0">
                             <span
-                                className="text-[#8FC3D5] font-bold text-base tracking-widest lg:text-lg"
+                                className="text-[#8FC3D5] font-bold text-sm sm:text-base tracking-widest lg:text-lg"
                                 style={{ fontFamily: "'Cinzel', serif" }}
                             >
                                 OP<span className="text-white/40 mx-1">—</span>LEVIATÃ
@@ -82,10 +82,13 @@ export const Header = () => {
                         <div className="flex items-center gap-2">
                             <SearchBar onOpenChange={setSearchOpen} />
 
-                            <HamburgerButton
-                                onClick={() => setMobileOpen((v) => !v)}
-                                isOpen={mobileOpen}
-                            />
+                            {!searchOpen &&
+                                <HamburgerButton
+                                    onClick={() => setMobileOpen((v) => !v)}
+                                    isOpen={mobileOpen}
+                                />
+                            }
+                            
                         </div>
 
                     </div>

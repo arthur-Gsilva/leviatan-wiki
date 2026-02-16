@@ -16,12 +16,12 @@ export const piratasData: StaticPageData = {
                 {
                     title: "Supernovas",
                     members: [
-                        {name: "Thomas", image: "/players/violet/violet.png", slug: "Thomas"},
+                        {name: "Thomas", image: "https://i.pinimg.com/736x/55/7e/a3/557ea300626cc4f5f65ff9e7e6becde4.jpg", slug: "Thomas"},
                         {name: "Violet Hoshino", image: "/players/violet/violet.png", slug: "violet"},
-                        {name: "Kaleo Adiel", image: "/players/violet/violet.png", slug: "kaleo"},
-                        {name: "Nero", image: "/players/violet/violet.png", slug: "Nero"},
-                        {name: "Liebert Frozi", image: "/players/violet/violet.png", slug: "Liebert"},
-                        {name: "Bronco", image: "/players/violet/violet.png", slug: "BRONCO"},
+                        {name: "Kaleo Adiel", image: "https://i.pinimg.com/736x/e8/54/6a/e8546ab5bdac8a23963d736cd6402dc5.jpg", slug: "kaleo"},
+                        {name: "Nero", image: "https://i.pinimg.com/236x/27/8a/e0/278ae0043f8124a1ec0f09704d97c64d.jpg", slug: "Nero"},
+                        {name: "Liebert Frozi", image: "https://i.pinimg.com/1200x/d2/6d/a0/d26da00510f15df5c4e8a2e8fe1ed1f0.jpg", slug: "Liebert"},
+                        {name: "Bronco", image: "https://static.wikia.nocookie.net/oproleplaying/images/b/bd/Bronco_Kid_Portrait.png/revision/latest?cb=20200913035825", slug: "BRONCO"},
                     ]
                 }
             ]
@@ -36,15 +36,15 @@ export const piratasData: StaticPageData = {
                     title: "Shichibukais",
                     members: [
                         {name: "Violet Hoshino", image: "/players/violet/violet.png", slug: "violet"},
-                        {name: "Nayami", image: "/players/violet/violet.png", slug: "nayami"},
-                        {name: "Marin Borjoa", image: "/players/violet/violet.png", slug: "Marin-Borjoa"},
-                        {name: "Lamont", image: "/players/violet/violet.png", slug: "lamont"},
+                        {name: "Nayami", image: "https://i.pinimg.com/1200x/93/3a/c4/933ac442fc726c1afc68ad738c53dca2.jpg", slug: "nayami"},
+                        {name: "Marin Borjoa", image: "https://i.pinimg.com/1200x/e8/50/66/e8506607a3ee8dabf0f13e4481e92976.jpg", slug: "Marin"},
+                        {name: "Lamont", image: "https://i.pinimg.com/736x/3f/a3/58/3fa35836be60c47ff4a3646112073d79.jpg", slug: "lamont"},
                     ]
                 },
                 {
                     title: "Ex-Shichibukais",
                     members: [
-                        {name: "Hawl", image: "/players/violet/violet.png", slug: "Hawl"},
+                        {name: "Hawl", image: "https://i.pinimg.com/1200x/f9/2f/1a/f92f1ab42d26f8b4fc47fe5ddc75d3e9.jpg", slug: "Hawl"},
                     ]
                 }
             ]

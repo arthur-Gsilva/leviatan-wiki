@@ -7,6 +7,9 @@ import { governoData } from "./governo"
 import { antiguidadesData } from "./antiguidades"
 import { variadosData } from "./variados"
 import { especiesData } from "./especies"
+import { akumaData } from "./materiais/akumas"
+import { itensData } from "./materiais/itens"
+import { contosData } from "./materiais/contos"
 
 
 export const staticPages: Record<string, StaticPageData> = {
@@ -16,5 +19,8 @@ export const staticPages: Record<string, StaticPageData> = {
   governo: governoData,
   antiguidades: antiguidadesData,
   variados: variadosData,
-  especies: especiesData
+  especies: especiesData,
+  akuma_no_mi: akumaData,
+  itens: itensData,
+  contos: contosData
 }

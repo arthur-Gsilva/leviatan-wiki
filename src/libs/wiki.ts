@@ -3,8 +3,6 @@ import { supabaseServer } from "@/libs/supabase"
 
 
 export async function getEntryBySlug(slug: string): Promise<WikiEntry | null> {
-  
-
   const { data, error } = await supabaseServer
     .from("wiki_entries")
     .select("*")
@@ -13,4 +11,15 @@ export async function getEntryBySlug(slug: string): Promise<WikiEntry | null> {
 
   if (error || !data) return null
   return data as WikiEntry
+}
+
+export async function getSearchedItems(query: string): Promise<WikiEntry[] | null> {
+  const {data, error} = await supabaseServer
+    .from("wiki_entries")
+    .select("*")
+    .contains("slug", query)
+    .limit(5)
+
+  if (error || !data) return null
+  return data as WikiEntry[]
 }

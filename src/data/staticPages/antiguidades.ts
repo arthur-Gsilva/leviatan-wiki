@@ -16,7 +16,7 @@ export const antiguidadesData: StaticPageData = {
                 {
                     title: "Figuras",
                     members: [
-                        { name: "Shukaku", slug: "Shukaku", image: "https://i.pinimg.com/736x/5c/37/21/5c3721a5ee6b3cb96bad27948edbe26e.jpg" },
+                        { name: "Shukaku", slug: "Shukaku", image: "https://img.freepik.com/fotos-premium/ilustracao-da-silhueta-de-um-homem-corajoso_1285008-6128.jpg?semt=ais_hybrid&w=740&q=80" },
                         { name: "Ravi", slug: "ravi", image: "https://i.pinimg.com/236x/d6/9a/72/d69a720e314e6c914da142fa0d1d8a27.jpg" },
                     ]
                 }

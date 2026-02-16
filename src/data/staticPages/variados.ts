@@ -1,4 +1,3 @@
-// data/static/marinha.ts
 import { StaticPageData } from "@/types/staticPage"
 
 export const variadosData: StaticPageData = {
@@ -30,7 +29,7 @@ export const variadosData: StaticPageData = {
                     title: "Lutadores",
                     members: [
                         { name: "Monkutaro", slug: "Monkutaro", image: "https://i.pinimg.com/564x/15/7d/ef/157def5de1804d50ab8f8c18c76105df.jpg" },
-                        { name: "Doku", slug: "doku", image: "https://i.pinimg.com/564x/15/7d/ef/157def5de1804d50ab8f8c18c76105df.jpg" },
+                        { name: "Doku", slug: "doku", image: "https://i.pinimg.com/236x/db/a8/98/dba898d9a89e8cddbe474581b60254ba.jpg" },
                     ]
                 },
             ]
@@ -43,7 +42,8 @@ export const variadosData: StaticPageData = {
                     title: "Sem conceito definido",
                     members: [
                         { name: "Pedro", slug: "pedro", image: "https://i.pinimg.com/736x/13/61/51/136151359e3af4f060c60832d079a72f.jpg" },
-                        { name: "Shango", slug: "shango", image: "https://static.wikia.nocookie.net/standard-evil/images/e/e9/Vesta_Anime.png/revision/latest?cb=20250417175041" },
+                        { name: "Shango", slug: "shango", image: "https://img.freepik.com/fotos-premium/ilustracao-da-silhueta-de-um-homem-corajoso_1285008-6128.jpg?semt=ais_hybrid&w=740&q=80" },
+                        { name: "Ruby", slug: "Ruby", image: "https://i.pinimg.com/736x/c9/3a/e3/c93ae3d08bb4f57e0c5a971736fe948e.jpg" },
                     ]
                 }
             ]

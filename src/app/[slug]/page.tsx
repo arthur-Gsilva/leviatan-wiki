@@ -76,7 +76,7 @@ export default async function Page({ params }: Props) {
                                 {section.title}
                             </h2>
                             <p>
-                                {section.content}
+                                {parseContent(section.content)}
                             </p>
                         </div>
                     ))}

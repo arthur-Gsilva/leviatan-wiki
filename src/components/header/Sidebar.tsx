@@ -22,14 +22,14 @@ export const MobileSidebar = ({
                 />
 
                 <motion.aside
-                    className="fixed top-0 left-0 h-full w-75 z-50 lg:hidden overflow-y-auto"
+                    className="fixed top-0 right-0 h-full w-75 z-50 lg:hidden overflow-y-auto"
                     style={{
                         background: "linear-gradient(160deg, #080f1a 0%, #0d1b2a 100%)",
                         borderRight: "1px solid rgba(143,195,213,0.2)",
                     }}
-                    initial={{ x: "-100%" }}
+                    initial={{ x: "100%" }}
                     animate={{ x: 0 }}
-                    exit={{ x: "-100%" }}
+                    exit={{ x: "100%" }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     <div className="flex items-center justify-between px-5 py-5 border-b border-[#8FC3D5]/20">

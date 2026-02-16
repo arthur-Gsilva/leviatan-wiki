@@ -48,7 +48,7 @@ const materiaisChildren = [
     {
         label: "Akumas no mi",
         image: "https://static.wikia.nocookie.net/onepiece/images/e/e1/Fruta_do_Diabo_Infobox.png/revision/latest/scale-to-width-down/1200?cb=20181223211425&path-prefix=pt",
-        link: "akuma-no-mi"
+        link: "akuma_no_mi"
     },
     {
         label: "Arcos",
@@ -58,7 +58,7 @@ const materiaisChildren = [
     {
         label: "Itens Especiais",
         image: "https://static.wikia.nocookie.net/onepiece/images/3/34/Meito_Infobox.png/revision/latest?cb=20250222010242&path-prefix=pt",
-        link: "armas"
+        link: "itens"
     },
     {
         label: "Contos",

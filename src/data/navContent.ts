@@ -70,7 +70,7 @@ const materiaisChildren = [
 export const navItems = [
     {
         label: "Organizações criminosas",
-        icon: "/piratas-icon.svg",
+        icon: "/pirate.png",
         children: piratasChildren,
     },
     { 

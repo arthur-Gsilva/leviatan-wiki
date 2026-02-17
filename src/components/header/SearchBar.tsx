@@ -34,7 +34,7 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
     }
 
     const getData = async (value: string) => {
-        const res = await fetch(`http://localhost:3000/api/wiki?q=${encodeURIComponent(value)}`)
+        const res = await fetch(`https://leviatan-wiki.vercel.app/api/wiki?q=${encodeURIComponent(value)}`)
         const result = await res.json()
         setData(result)
     }

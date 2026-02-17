@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Cinzel } from "next/font/google"
+import { ViewTransitions } from "next-view-transitions";
+
+
 
 const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" })
 
@@ -27,8 +30,11 @@ export default function RootLayout({
             }}
       >
 
-        <Header />
-        {children}
+        <ViewTransitions>
+            <Header />
+            {children}
+        </ViewTransitions>
+        
       </body>
     </html>
   );

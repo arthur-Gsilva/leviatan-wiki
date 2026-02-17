@@ -33,7 +33,7 @@ export const marinhaData: StaticPageData = {
         {
           title: "Vice almirantes",
           members: [
-            {name: "Lewis Burns", slug: "lewis-burns", image: "https://i.pinimg.com/736x/5c/37/21/5c3721a5ee6b3cb96bad27948edbe26e.jpg"},
+            {name: "Lewis Burns", slug: "lewis", image: "https://i.pinimg.com/736x/5c/37/21/5c3721a5ee6b3cb96bad27948edbe26e.jpg"},
             {name: "Mahina Hoshino", slug: "mahina", image: "https://i.pinimg.com/1200x/aa/2e/03/aa2e0340c37ff50e828362adcff2f584.jpg"},
             {name: "Bruce Wayne", slug: "bruce", image: "https://i.pinimg.com/736x/4e/ab/59/4eab59fe3b21e945d485f9ee8601872d.jpg"},
 

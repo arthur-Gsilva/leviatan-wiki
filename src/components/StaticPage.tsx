@@ -4,7 +4,7 @@ import { StaticPageData, StaticGroup } from "@/types/staticPage"
 import { ContentBox } from "./ContentBox"
 import { parseContent } from "@/utils/parseContent"
 import Image from "next/image"
-import Link from "next/link"
+import {Link} from "next-view-transitions"
 import { motion } from "framer-motion"
 
 // ── Member Card ──────────────────────────────────────────────────────────────
@@ -23,6 +23,7 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
                     hovered: { scale: 1.1 },
                 }}
                 transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                
             >
                 <Image
                     src={member.image as string}
@@ -30,6 +31,9 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
                     fill
                     className="object-cover object-top"
                     sizes="112px"
+                    style={{
+                        viewTransitionName: `character-image-${member.slug.toLowerCase()}`
+                    }}
                 />
             </motion.div>
 

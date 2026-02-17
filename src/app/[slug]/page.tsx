@@ -35,13 +35,17 @@ export default async function Page({ params }: Props) {
                     title={character.name}
                 />
 
-                <div className="flex  gap-4 mb-8 h-full">
+                <div className="flex flex-col md:flex-row gap-4 mb-8 h-full">
                     <Image
                         alt={character.name}
                         src={character.image as string}
                         width={300}
                         height={300}
                         className="rounded-md"
+                        style={{
+                            // CRITICAL: precisa ser EXATAMENTE o mesmo nome do MemberCard
+                            viewTransitionName: `character-image-${character.slug.toLowerCase()}`,
+                        }}
                     />
 
                     <div

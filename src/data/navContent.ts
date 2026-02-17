@@ -80,12 +80,12 @@ export const navItems = [
     }, 
     { 
         label: "Alternativos", 
-        icon: "/marinha/marinha-header.png",
+        icon: "/variados.png",
         children: outrosChildren
     },
     { 
         label: "Materiais", 
-        icon: "/marinha/marinha-header.png",
+        icon: "/materiais-removebg-preview.png",
         children: materiaisChildren
     },
 ]

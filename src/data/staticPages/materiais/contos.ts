@@ -16,7 +16,7 @@ export const contosData: StaticPageData = {
         {
           title: "Referências",
           members: [
-            { name: "Dom Yokutami", slug: "Dom_yokutami", image: "https://img.freepik.com/fotos-premium/ilustracao-da-silhueta-de-um-homem-corajoso_1285008-6128.jpg?semt=ais_hybrid&w=740&q=80" },
+            { name: "Dom Yokutami", slug: "Dom_yokutami", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBddpSHmHpRoPRZeK7Knb9hcKhVLXnocKPKw&s" },
             {name: "Mahina Hoshino", slug: "mahina", image: "https://i.pinimg.com/1200x/aa/2e/03/aa2e0340c37ff50e828362adcff2f584.jpg"},
           ]
         }

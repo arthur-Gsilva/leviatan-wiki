@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* DEBUG: transição BEM LENTA + borda vermelha */
+::view-transition-group(*) {
+  animation-duration: 3s !important;
+}
+
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 3s !important;
+  border: 5px solid red !important;
+}

@@ -28,6 +28,20 @@ export const governoData: StaticPageData = {
                     ]
                 }
             ]
-        }
+        },
+        {
+            title: "Família Real Fundadora",
+            image: "https://criticalhits.com.br/wp-content/uploads/2019/11/Tenryuubito.webp",
+            content: "Família Fundadora faz referência às vinte linhagens reais que, há cerca de 800 anos, se uniram para criar o Governo Mundial após o fim do chamado “Século Perdido”. As famílias que participaram dessa fundação abandonaram seus países de origem e passaram a viver em Mary Geoise, a Terra Santa localizada no topo da Red Line. A partir desse momento, tornaram-se conhecidas como Dragões Celestiais, assumindo uma posição de extrema autoridade e privilégio dentro do mundo.",
+            group: [
+                {
+                    title: "Família Frost",
+                    members: [
+                        { name: "Celeste Frost", slug: "celete_frost", image: "https://i.pinimg.com/736x/99/b7/fb/99b7fb136a610af00a32e7f661a61f92.jpg" }
+
+                    ]
+                }
+            ]
+        },
     ]
 }

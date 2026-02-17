@@ -31,7 +31,7 @@ export const especiesData: StaticPageData = {
                 {
                     title: "Exemplares",
                     members: [
-                        { name: "Alejandro Maduro", slug: "alejandro", image: "https://i.pinimg.com/736x/5c/37/21/5c3721a5ee6b3cb96bad27948edbe26e.jpg" }
+                        { name: "Alejandro Maduro", slug: "alejandro", image: "/players/alejandro/alejandro.jpg" }
 
                     ]
                 }
@@ -140,6 +140,7 @@ export const especiesData: StaticPageData = {
                         { name: "Toph", slug: "toph", image: "https://i.pinimg.com/736x/7a/c0/55/7ac055eef274f7289f4217c5e02f6a0d.jpg" },
                         { name: "Sagar", slug: "Sagar", image: "https://i.pinimg.com/1200x/ec/d5/8b/ecd58bd6de371df9ab79c2277b82f0f0.jpg" },
                         { name: "Violet Hoshino", slug: "violet", image: "/players/violet/violet.png" },
+                        { name: "Tony", slug: "tony", image: "https://i.pinimg.com/736x/cc/71/72/cc71729df1c0cb4d14fc9b09562c37d3.jpg" },
                     ]
                 },
             ]

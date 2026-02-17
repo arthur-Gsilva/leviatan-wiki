@@ -26,6 +26,19 @@ export const piratasData: StaticPageData = {
                 }
             ]
         },
+        {
+            title: "Maré Serpente",
+            content: "Um grupo que surgiu misteriosamente nos marés que chama a atenção pela quantidade expressiva de membros que esse grupo conquistou e conquista. O crescimento da maré serpente acontece de maneira muito rápida e expressiva, dominando ilhas, rotas maritimas e recrutando outros piratas para o grupo. Ele é composto por diversos bandos, mas que indiretamente tem uma mesma causa.Uma característica marcante desse grupo é uma tatuagem de corpo de uma serpente que seus membros têm. Além disso, há uma tatuagem mais específica, que se remete mais a uma cabeça de cobra, esses são os mais próximos e confiáveis do líder David Howells, o único que porta a uma cobra em sua forma completa, demostrando seu domínio absoluto.",
+            image: "https://i.pinimg.com/736x/f8/02/18/f80218e9bc0c7593ff4fe23768700f4f.jpg",
+            group: [
+                {
+                    title: "Líder",
+                    members: [
+                        { name: "David Howells", slug: "david_howells", image: "https://i.pinimg.com/736x/e3/1c/f4/e31cf48e4dfb734f60e2d17a44ce299a.jpg" },
+                    ]
+                }
+            ]
+        },
         
         {
             title: "Shichibukais",
@@ -50,22 +63,31 @@ export const piratasData: StaticPageData = {
             ]
         },
         {
-            title: "Yonkos",
+            title: "Yonkous",
             content: "São os quatro capitães piratas mais notórios e mais poderosos do mundo, de acordo com o Governo Mundial, mas não são nem aliados nem inimigos uns dos outros, preferindo permanecer autônomos na maioria das circunstâncias. Sempre possuem áreas de influência, as quais protegem, e onde se abrigam. A maior força que um Yonko dispõe é a sua tripulação, geralmente composta por milhares de piratas de enorme poder e renome. Com isso, sua organização conta com vários comandantes capazes e de força assustadora. Nenhum Yonko atual foi revelado.",
             image: "https://criticalhits.com.br/wp-content/uploads/2023/03/39a41-16727799191001-1920-910x512.jpg",
             group: [
                 {
-                    title: "Ex-Yonkos",
+                    title: "Ex-Yonkou",
                     members: [
                         {name: "Eldris", slug: "Eldris", image: "https://i.pinimg.com/736x/bb/f0/04/bbf004803c0a2260480e06a03053eb64.jpg"}
                     ]
                 }
             ]
         },
+        
         {
             title: "BigBang",
             content: "Não há um número especifíco de piratas considerados BigBang, mas seus números também não são expressivos. Essa categoria representa um grupo de piratas que têm recompensa acima de 1 Bilhão e não tem um vínculo direto de aliança com um Yonko. Tendem ser, em relação a números e tripulação bem inferiores aos imperadores, mas há certos fatores que os fazem ser temíveis os suficiente para se manterem em ativa. Não informações sobre piratas dessa categoria.",
-            image: "https://geekdama.com.br/wp-content/uploads/2023/10/one-piece-manga-1096-bando-rocks-colorizacao-by-JLjarx-postcover.jpg"
+            image: "https://geekdama.com.br/wp-content/uploads/2023/10/one-piece-manga-1096-bando-rocks-colorizacao-by-JLjarx-postcover.jpg",
+            group: [
+                {
+                    title: "Exemplares",
+                    members: [
+                        { name: "Gank", slug: "Gank", image: "https://i.pinimg.com/736x/42/27/2f/42272f4aca59b6b003333952f1cf2f11.jpg" },
+                    ]
+                }
+            ]
         },
         
     ]

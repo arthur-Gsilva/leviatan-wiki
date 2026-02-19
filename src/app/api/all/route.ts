@@ -3,12 +3,6 @@ import { cookies } from "next/headers"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function GET(req: NextRequest) {
-    const query = req.nextUrl.searchParams.get("q")
-    console.log("query recebida:", query)
-
-    if (!query || query.length < 2) {
-        return NextResponse.json([])
-    }
 
     const cookieStore = await cookies()
     const supabase = createServerClient(
@@ -19,9 +13,7 @@ export async function GET(req: NextRequest) {
 
     const { data, error } = await supabase
         .from("wiki_entries")
-        .select("id, slug, name, type, organization, image")
-        .ilike("name", `%${query}%`)
-        .limit(5)
+        .select("*")
 
     console.log("data:", data)
     console.log("error:", error)

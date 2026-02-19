@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion"
 
 export const HamburgerButton = ({ onClick, isOpen }: { onClick: () => void; isOpen: boolean }) => (

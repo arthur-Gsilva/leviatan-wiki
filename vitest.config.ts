@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 // Garante que o TypeScript reconheça os tipos do Vitest
-
+import './envConfig' 
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -20,8 +20,8 @@ export default defineConfig({
     // sem importar manualmente
     globals: true,
 
-    css: false,
-    pool: "threads",
+    css: true,
+    pool: "forks",
     
 
     // Rodar testes em paralelo (comportamento padrão do Vitest)

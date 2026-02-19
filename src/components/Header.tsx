@@ -9,8 +9,6 @@ import { NavItemDesktop } from "./header/NavItemDesktop"
 import { AnimatePresence, motion } from "motion/react"
 import { SearchBar } from "./header/SearchBar"
 
-
-
 interface NavChild {
     label: string
     image: string

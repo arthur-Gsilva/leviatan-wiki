@@ -44,9 +44,8 @@ export const SearchedItem = ({ query, data }: Props) => {
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
         >
-            {/* Arrow */}
             <div
-                className="absolute -top-[7px] right-4 w-3 h-3 rotate-45"
+                className="absolute -top-1.75 right-4 w-3 h-3 rotate-45"
                 style={{
                     background: "#0d1b2a",
                     borderTop: "1px solid rgba(143,195,213,0.20)",
@@ -54,7 +53,6 @@ export const SearchedItem = ({ query, data }: Props) => {
                 }}
             />
 
-            {/* Header */}
             <div className="px-4 pt-4 pb-2 border-b border-[#8FC3D5]/10">
                 <p
                     className="text-[#8FC3D5]/60 text-[10px] uppercase tracking-[0.2em]"
@@ -65,7 +63,6 @@ export const SearchedItem = ({ query, data }: Props) => {
                 </p>
             </div>
 
-            {/* Resultados */}
             <div className="px-4 py-4 flex flex-col gap-2">
                 {hasResults
                     ? data.map((item, i) => (
@@ -78,7 +75,6 @@ export const SearchedItem = ({ query, data }: Props) => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.05 }}
                             >
-                                {/* Thumbnail */}
                                 <div className="relative w-10 h-10 rounded-md shrink-0 overflow-hidden"
                                     style={{ border: "1px solid rgba(143,195,213,0.15)" }}>
                                     <Image
@@ -90,7 +86,6 @@ export const SearchedItem = ({ query, data }: Props) => {
                                     />
                                 </div>
 
-                                {/* Info */}
                                 <div className="flex flex-col gap-0.5 flex-1 min-w-0">
                                     <span
                                         className="text-white text-xs font-semibold truncate"
@@ -105,7 +100,6 @@ export const SearchedItem = ({ query, data }: Props) => {
                                     </span>
                                 </div>
 
-                                {/* Seta */}
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                     className="text-[#8FC3D5]/20 group-hover:text-[#8FC3D5]/60 transition-colors shrink-0">
                                     <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

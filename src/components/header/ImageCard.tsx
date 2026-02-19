@@ -1,8 +1,6 @@
-import { navItems } from "@/data/navContent"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useRef, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 interface NavChild {
     label: string

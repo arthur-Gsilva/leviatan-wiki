@@ -10,7 +10,7 @@ export const piratasData: StaticPageData = {
     sections: [
         {
             title: "Supernovas",
-            content: "São piratas em ascensão, que na maioria das vezes, têm pouco tempo de mar, mas que mesmo assim conseguiram grande notoriedade. Para se encaixar na categoria de supernova, é necessário adquirir uma recompensa de 100 milhões de Bellys ainda nos mares do paradise e tendo menos de 2 anos nos mares. Um exemplo disso, é [[Kaleo Adiel]] que recebeu como sua primeira recompensa 600 milhões.",
+            content: "São piratas em ascensão, que na maioria das vezes, têm pouco tempo de mar, mas que mesmo assim conseguiram grande notoriedade. Para se encaixar na categoria de supernova, é necessário adquirir uma recompensa de 100 milhões de Bellys ainda nos mares do paradise e tendo menos de 2 anos nos mares. Um exemplo disso, é [[Kaleo]] que recebeu como sua primeira recompensa 600 milhões.",
             image: "https://static.wikia.nocookie.net/onepiece/images/6/6e/Worst_Generation_Infobox.png/revision/latest?cb=20240728000504&path-prefix=pt",
             group: [
                 {
@@ -78,7 +78,7 @@ export const piratasData: StaticPageData = {
         
         {
             title: "BigBang",
-            content: "Não há um número especifíco de piratas considerados BigBang, mas seus números também não são expressivos. Essa categoria representa um grupo de piratas que têm recompensa acima de 1 Bilhão e não tem um vínculo direto de aliança com um Yonko. Tendem ser, em relação a números e tripulação bem inferiores aos imperadores, mas há certos fatores que os fazem ser temíveis os suficiente para se manterem em ativa. Não informações sobre piratas dessa categoria.",
+            content: "Não há um número especifíco de piratas considerados BigBang, mas seus números também não são expressivos. Essa categoria representa um grupo de piratas que têm recompensa acima de 1 Bilhão e não tem um vínculo direto de aliança com um Yonko. Tendem ser, em relação a números e tripulação bem inferiores aos imperadores, mas há certos fatores que os fazem ser temíveis os suficiente para se manterem em ativa. Seus ideais e objetos muitas vezes não esta ligado a dominação e expansionismo quando os Yonkous, mas ainda são temíveis.",
             image: "https://geekdama.com.br/wp-content/uploads/2023/10/one-piece-manga-1096-bando-rocks-colorizacao-by-JLjarx-postcover.jpg",
             group: [
                 {

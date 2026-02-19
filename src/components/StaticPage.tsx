@@ -7,7 +7,6 @@ import Image from "next/image"
 import {Link} from "next-view-transitions"
 import { motion } from "framer-motion"
 
-// ── Member Card ──────────────────────────────────────────────────────────────
 const MemberCard = ({ member }: { member: { name: string; image: string | null; slug: string } }) => (
     <Link href={`/${member.slug.toLowerCase()}`}>
         <motion.div
@@ -15,7 +14,6 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
             whileHover="hovered"
             initial="idle"
         >
-            {/* Imagem com zoom */}
             <motion.div
                 className="absolute inset-0"
                 variants={{
@@ -37,10 +35,8 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
                 />
             </motion.div>
 
-            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
-            {/* Nome */}
             <motion.span
                 className="absolute bottom-0 left-0 right-0 px-2 py-2 text-white text-[10px] font-semibold text-center leading-tight"
                 style={{ fontFamily: "'Cinzel', serif" }}
@@ -52,7 +48,6 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
                 {member.name}
             </motion.span>
 
-            {/* Borda brilhante no hover */}
             <motion.div
                 className="absolute inset-0 rounded-lg pointer-events-none"
                 variants={{
@@ -65,7 +60,6 @@ const MemberCard = ({ member }: { member: { name: string; image: string | null; 
     </Link>
 )
 
-// ── Group Block ──────────────────────────────────────────────────────────────
 const GroupBlock = ({ group }: { group: StaticGroup }) => (
     <div className="mt-4">
         {group.title && (
@@ -91,7 +85,6 @@ const GroupBlock = ({ group }: { group: StaticGroup }) => (
     </div>
 )
 
-// ── Section ──────────────────────────────────────────────────────────────────
 const SectionBlock = ({
     section,
     index,
@@ -105,7 +98,6 @@ const SectionBlock = ({
         transition={{ delay: 0.1 + index * 0.08, duration: 0.4 }}
         className="relative"
     >
-        {/* Linha decorativa + título */}
         <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-6 rounded-full" style={{ background: "linear-gradient(to bottom, #8FC3D5, rgba(143,195,213,0.2))" }} />
             <h2
@@ -117,7 +109,6 @@ const SectionBlock = ({
             <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, rgba(143,195,213,0.3), transparent)" }} />
         </div>
 
-        {/* Imagem da seção + texto lado a lado (se tiver imagem) */}
         {section.image ? (
             <div className="flex gap-5 items-start mb-4">
                 <div className="relative w-48 h-28 rounded-lg overflow-hidden shrink-0 hidden sm:block"
@@ -147,7 +138,6 @@ const SectionBlock = ({
             </p>
         )}
 
-        {/* Grupos de membros */}
         {section.group && section.group.length > 0 && (
             <div
                 className="rounded-xl px-5 py-4 flex flex-col gap-5 mt-2"
@@ -164,15 +154,12 @@ const SectionBlock = ({
     </motion.section>
 )
 
-// ── Main Component ───────────────────────────────────────────────────────────
 export const StaticPage = ({ data }: { data: StaticPageData }) => {
     return (
         <ContentBox>
-            {/* Hero header */}
             <div className="relative mb-10 pb-8 border-b border-[#8FC3D5]/15">
                 <div className="flex gap-6 items-start">
 
-                    {/* Imagem principal */}
                     <div
                         className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 hidden sm:block"
                         style={{ border: "1px solid rgba(143,195,213,0.2)", boxShadow: "0 4px 24px rgba(0,0,0,0.4)" }}
@@ -210,7 +197,6 @@ export const StaticPage = ({ data }: { data: StaticPageData }) => {
                 </div>
             </div>
 
-            {/* Seções */}
             <div className="flex flex-col gap-10">
                 {data.sections.map((section, i) => (
                     <SectionBlock key={section.title} section={section} index={i} />

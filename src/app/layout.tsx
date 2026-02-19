@@ -10,7 +10,11 @@ const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" })
 
 
 export const metadata: Metadata = {
-  title: "Guia Leviatã",
+  title: {
+    template: "%s - Leviatã",
+    default: "Wiki"
+  },
+  description: "Uma página de um fã e mestre de um RPG de One piece",
   icons: {
     icon: "/pirate.png"
   }

@@ -2,10 +2,21 @@ import { ContentBox } from "@/components/ContentBox"
 import { StaticPage } from "@/components/StaticPage"
 import { TitleBox } from "@/components/TitleBox"
 import { staticPages } from "@/data/staticPages"
-import { getEntryBySlug } from "@/libs/wiki"
+import { getAllSlugs, getEntryBySlug } from "@/services/wiki"
 import { parseContent } from "@/utils/parseContent"
 
+
 import Image from "next/image"
+
+export const generateMetadata = async ({ params }: Props) => {
+    const { slug } = await params
+    const character = await getEntryBySlug(slug.toLowerCase())
+
+    return{
+        title: character?.name || slug,
+        description: `Pagina sobre ${character?.name || slug}`
+    }
+}
 
 
 type Props = {
@@ -14,6 +25,11 @@ type Props = {
 
 export default async function Page({ params }: Props) {
     const { slug } = await params
+
+    const blockedSlugs = ['robots.txt', 'sitemap.xml', 'favicon.ico', 'api'];
+    if (blockedSlugs.some(blocked => slug.toLowerCase().includes(blocked))) {
+        return null; // Deixa o Next.js resolver
+    }
     
     const staticData = staticPages[slug.toLowerCase()]
     if (staticData) return <StaticPage data={staticData} />
@@ -43,7 +59,7 @@ export default async function Page({ params }: Props) {
                         height={300}
                         className="rounded-md"
                         style={{
-                            // CRITICAL: precisa ser EXATAMENTE o mesmo nome do MemberCard
+
                             viewTransitionName: `character-image-${character.slug.toLowerCase()}`,
                         }}
                     />
@@ -88,4 +104,13 @@ export default async function Page({ params }: Props) {
             </ContentBox>
         </div>
     )
+}
+
+
+export const generateStaticParams = async () => {
+    const data: String[] = await getAllSlugs()
+
+    return data.map(item => ({
+        slug: item.toLowerCase()
+    }))
 }

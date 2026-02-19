@@ -15,7 +15,6 @@ export const DesktopDropdown = ({ item, isOpen }: { item: NavItem; isOpen: boole
                 className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+8px)] z-50"
                 style={{ pointerEvents: "auto" }}
             >
-                {/* Arrow */}
                 <div className="flex justify-center mb-0">
                     <div className="w-3 h-3 rotate-45 bg-[#0d1b2a] border-t border-l border-[#8FC3D5]/30 -mb-1.5 mx-auto" />
                 </div>

@@ -17,7 +17,6 @@ export const piratasData: StaticPageData = {
                     title: "Supernovas",
                     members: [
                         {name: "Thomas", image: "https://i.pinimg.com/736x/55/7e/a3/557ea300626cc4f5f65ff9e7e6becde4.jpg", slug: "Thomas"},
-                        {name: "Violet Hoshino", image: "/players/violet/violet.png", slug: "violet"},
                         {name: "Kaleo Adiel", image: "https://i.pinimg.com/736x/e8/54/6a/e8546ab5bdac8a23963d736cd6402dc5.jpg", slug: "kaleo"},
                         {name: "Nero", image: "https://i.pinimg.com/236x/27/8a/e0/278ae0043f8124a1ec0f09704d97c64d.jpg", slug: "Nero"},
                         {name: "Liebert Frozi", image: "https://i.pinimg.com/1200x/d2/6d/a0/d26da00510f15df5c4e8a2e8fe1ed1f0.jpg", slug: "Liebert"},

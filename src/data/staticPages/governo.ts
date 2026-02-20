@@ -37,7 +37,7 @@ export const governoData: StaticPageData = {
                 {
                     title: "Família Frost",
                     members: [
-                        { name: "Celeste Frost", slug: "celete_frost", image: "https://i.pinimg.com/736x/99/b7/fb/99b7fb136a610af00a32e7f661a61f92.jpg" }
+                        { name: "Celeste Frost", slug: "celeste_frost", image: "https://i.pinimg.com/736x/99/b7/fb/99b7fb136a610af00a32e7f661a61f92.jpg" }
 
                     ]
                 }

@@ -25,12 +25,61 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* DEBUG: transição BEM LENTA + borda vermelha */
 ::view-transition-group(*) {
-  animation-duration: 3s !important;
+  animation-duration: 1s !important;
 }
 
 ::view-transition-old(*),
 ::view-transition-new(*) {
-  animation-duration: 3s !important;
+  animation-duration: 1s !important;
+}
+
+
+/* Adicione isso ao seu globals.css */
+
+/* Custom scrollbar para ContentBox */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(8, 15, 26, 0.4);
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(143, 195, 213, 0.4) 0%,
+    rgba(143, 195, 213, 0.6) 50%,
+    rgba(143, 195, 213, 0.4) 100%
+  );
+  border-radius: 8px;
+  border: 2px solid rgba(13, 27, 42, 0.8);
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(143, 195, 213, 0.6) 0%,
+    rgba(143, 195, 213, 0.8) 50%,
+    rgba(143, 195, 213, 0.6) 100%
+  );
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(
+    180deg,
+    rgba(143, 195, 213, 0.7) 0%,
+    rgba(143, 195, 213, 0.9) 50%,
+    rgba(143, 195, 213, 0.7) 100%
+  );
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(143, 195, 213, 0.5) rgba(8, 15, 26, 0.4);
 }

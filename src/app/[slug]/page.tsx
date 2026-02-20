@@ -8,6 +8,8 @@ import { parseContent } from "@/utils/parseContent"
 
 import Image from "next/image"
 
+export const revalidate = 3600
+
 export const generateMetadata = async ({ params }: Props) => {
     const { slug } = await params
     const character = await getEntryBySlug(slug.toLowerCase())
@@ -28,7 +30,7 @@ export default async function Page({ params }: Props) {
 
     const blockedSlugs = ['robots.txt', 'sitemap.xml', 'favicon.ico', 'api'];
     if (blockedSlugs.some(blocked => slug.toLowerCase().includes(blocked))) {
-        return null; // Deixa o Next.js resolver
+        return null; 
     }
     
     const staticData = staticPages[slug.toLowerCase()]
@@ -51,15 +53,14 @@ export default async function Page({ params }: Props) {
                     title={character.name}
                 />
 
-                <div className="flex flex-col md:flex-row gap-4 mb-8 h-full">
+                <div className="flex flex-col md:flex-row gap-4 mb-8 h-ful overflow-y-hidden">
                     <Image
                         alt={character.name}
                         src={character.image as string}
-                        width={300}
-                        height={300}
-                        className="rounded-md"
+                        width={280}
+                        height={360}
+                        className="rounded-md object-cover object-top"
                         style={{
-
                             viewTransitionName: `character-image-${character.slug.toLowerCase()}`,
                         }}
                     />

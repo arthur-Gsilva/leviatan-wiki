@@ -39,7 +39,7 @@ export type WikiEntry = {
   updated_at: string
 }
 
-// Para imagens locais, você cria um mapa separado no front
+
 export type LocalImages = {
   [slug: string]: EntryImage[]
 }

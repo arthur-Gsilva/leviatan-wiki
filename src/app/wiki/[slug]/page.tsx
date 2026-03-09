@@ -1,14 +1,16 @@
 import { ContentBox } from "@/components/ContentBox"
+import { CrewPage } from "@/components/CrewPage"
+import { FruitPage } from "@/components/FruitPage"
 import { StaticPage } from "@/components/staticpage/StaticPage"
 import { TitleBox } from "@/components/TitleBox"
-import { staticPages } from "@/data/staticPages"
-import { getAllSlugs, getEntryBySlug, getCharacterBySlug } from "@/services/wiki"
+import { getCategoryBySlug } from "@/services/sections"
+import { getAllSlugs, getCharacterBySlug, getCrew, getFruit } from "@/services/wiki"
 import { parseContent } from "@/utils/parseContent"
 
 
 import Image from "next/image"
 
-export const revalidate = 3600
+export const revalidate = 600
 
 export const generateMetadata = async ({ params }: Props) => {
     const { slug } = await params
@@ -28,8 +30,14 @@ type Props = {
 export default async function Page({ params }: Props) {
     const { slug } = await params
 
-    const staticData = staticPages[slug.toLowerCase()]
-    if (staticData) return <StaticPage data={staticData} />
+    const fruit = await getFruit(slug)
+    if(fruit) return <FruitPage data={fruit}/>
+
+    const crew = await getCrew(slug)
+    if (crew) return <CrewPage data={crew} />
+
+    const category = await getCategoryBySlug(slug.toLowerCase())
+    if (category) return <StaticPage data={category} />
 
     const character = await getCharacterBySlug(slug.toLowerCase())
 

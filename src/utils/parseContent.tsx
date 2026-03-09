@@ -17,7 +17,7 @@ export const parseContent = (text: string) => {
             return (
                 <Link
                     key={i}
-                    href={`/${slug}`}
+                    href={`/wiki/${slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#8FC3D5] font-medium underline underline-offset-2 

@@ -2,12 +2,13 @@
 import Image from "next/image"
 import {Link} from "next-view-transitions"
 import { motion } from "framer-motion"
+import { CardCharacter } from "@/types/titles"
 
 
-export const MemberCard = ({ member}: { member: { name: string; image: string | null; slug: string }}) => {
+export const MemberCard = ({ member}: { member: CardCharacter}) => {
 
     return(
-        <Link href={`/${member.slug.toLowerCase()}`}>
+        <Link href={`/wiki/${member.slug.toLowerCase()}`}>
             <motion.div
                 className="relative w-28 h-36 rounded-lg overflow-hidden cursor-pointer shrink-0"
                 whileHover="hovered"

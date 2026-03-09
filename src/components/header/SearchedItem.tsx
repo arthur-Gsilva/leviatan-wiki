@@ -66,7 +66,7 @@ export const SearchedItem = ({ query, data }: Props) => {
             <div className="px-4 py-4 flex flex-col gap-2">
                 {hasResults
                     ? data.map((item, i) => (
-                        <Link key={item.id} href={`/${item.slug}`}>
+                        <Link key={item.id} href={`/wiki/${item.slug}`}>
                             <motion.div
                                 className="flex items-center gap-3 p-2 rounded-lg cursor-pointer group"
                                 style={{ background: "rgba(143,195,213,0.04)" }}

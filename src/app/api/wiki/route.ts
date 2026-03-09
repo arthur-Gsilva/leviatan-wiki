@@ -17,13 +17,10 @@ export async function GET(req: NextRequest) {
     )
 
     const { data, error } = await supabase
-        .from("wiki_entries")
-        .select("id, slug, name, type, organization, image")
+        .from("search_index")
+        .select("id, slug, name, image, type")
         .ilike("name", `%${query}%`)
-        .limit(5)
-
-    console.log("data:", data)
-    console.log("error:", error)
+        .limit(8)
 
     if (error) return NextResponse.json([])
     return NextResponse.json(data ?? [])

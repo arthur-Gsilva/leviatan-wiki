@@ -17,6 +17,7 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
     const [data, setData] = useState<WikiEntry[] | null>([])
     const inputRef = useRef<HTMLInputElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    
     const [debouncedSearchTerm] = useDebounce(query, 500)
 
     const showResults = query.length >= 2

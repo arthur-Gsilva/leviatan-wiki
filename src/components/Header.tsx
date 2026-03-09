@@ -41,8 +41,8 @@ export const Header = () => {
             <header
                 className="sticky top-0 z-30 w-full"
                 style={{
-                    background: "linear-gradient(90deg, rgba(8,15,26,0.97) 0%, rgba(13,27,42,0.97) 100%)",
-                    borderBottom: "1px solid rgba(143,195,213,0.15)",
+                    background: "linear-gradient(135deg, rgb(var(--bg-900) / 0.98) 0%, rgb(var(--bg-800) / 0.97) 60%, rgb(var(--bg-700) / 0.98) 100%)",
+                borderBottom: "1px solid rgb(var(--p) / 0.12)",
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
                 }}
@@ -50,12 +50,12 @@ export const Header = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between h-16 lg:h-auto lg:py-3 ">
 
-                        <Link href="/" className="flex items-center gap-2 shrink-0">
+                        <Link href="/wiki" className="flex items-center gap-2 shrink-0">
                             <span
-                                className="text-[#8FC3D5] font-bold text-sm sm:text-base tracking-widest lg:text-lg"
-                                style={{ fontFamily: "'Cinzel', serif" }}
+                                className="text-(--p) font-bold text-sm sm:text-base tracking-widest lg:text-lg"
+                                style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p))" }}
                             >
-                                OP<span className="text-white/40 mx-1">—</span>LEVIATÃ
+                                OP<span className=" mx-1">—</span>LEVIATÃ
                             </span>
                         </Link>
 

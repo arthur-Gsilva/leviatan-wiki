@@ -36,7 +36,6 @@ export const CrewPage = ({ data }: { data: CrewFull }) => {
 
     return (
         <ContentBox>
-            {/* ── Hero ── */}
             <div className="relative mb-10 pb-8 border-b border-[#8FC3D5]/15">
                 <div className="flex gap-6 items-start">
                     {data.image && (
@@ -53,6 +52,9 @@ export const CrewPage = ({ data }: { data: CrewFull }) => {
                                 fill
                                 className="object-cover"
                                 sizes="128px"
+                                style={{
+                                    viewTransitionName: `character-image-${data.slug.toLowerCase()}`,
+                                }}
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                         </div>
@@ -84,6 +86,15 @@ export const CrewPage = ({ data }: { data: CrewFull }) => {
                         )}
                     </div>
                 </div>
+            </div>
+
+            <div className="mb-8">
+                <h1 className="text-center text-2xl"
+                    style={{ fontFamily: "'Cinzel', serif" }}>História</h1>
+
+                <p className="text-white whitespace-pre-line">
+                    {parseContent(data.history as string)}
+                </p>
             </div>
 
             {/* ── Membros ── */}

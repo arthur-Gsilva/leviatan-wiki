@@ -85,6 +85,7 @@ export async function getCrew(slug: string): Promise<CrewFull | null> {
         slug: crew.slug,
         name: crew.name,
         type: crew.type,
+        history: crew.history,
         description: crew.description,
         image: crew.image,
         members: members.map((m) => ({
@@ -143,5 +144,23 @@ export async function getFruit(slug: string): Promise<Fruit | null> {
             image: m.characters.image_url,
             end_date: m.end_date ?? null,
         })),
+    }
+}
+
+export async function getCrews() {
+    try {
+        const { data, error } = await supabaseServer
+            .from('crews')
+            .select('slug, name, image')
+
+        if (error) {
+            console.error('Erro ao buscar bandos:', error)
+            return []
+        }
+
+        return data
+    } catch (error) {
+        console.error('Erro inesperado ao buscar bandos:', error)
+        return []
     }
 }

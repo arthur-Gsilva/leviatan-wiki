@@ -12,6 +12,7 @@ export type CrewFull = {
     name: string
     type: string
     description: string | null
+    history: string
     members: CrewMember[]
     image: string | null
 }

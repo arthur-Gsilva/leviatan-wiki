@@ -3,11 +3,9 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Cinzel } from "next/font/google"
 import { ViewTransitions } from "next-view-transitions";
-
-
+import { ThemeButton } from "@/components/ThemeButton";
 
 const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" })
-
 
 export const metadata: Metadata = {
   title: {
@@ -26,21 +24,54 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    // suppressHydrationWarning: necessário pois o script inline altera
+    // o atributo data-theme antes da hidratação do React, causando mismatch
+    <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              const t = localStorage.getItem('wiki-theme');
+              if (t) document.documentElement.setAttribute('data-theme', t);
+            })();
+          `
+        }} />
+      </head>
       <body
         className="min-h-screen min-w-screen"
-            style={{
-                backgroundImage: "url('https://images.wallpapersden.com/image/download/one-piece-anime_am1nZmuUmZqaraWkpJRobWllrWdma2U.jpg')",
-                backgroundPosition: 'center',
-                backgroundSize: "cover",
-            }}
+        style={{
+          backgroundImage: "url('https://images.wallpapersden.com/image/download/one-piece-anime_am1nZmuUmZqaraWkpJRobWllrWdma2U.jpg')",
+          backgroundPosition: 'center',
+          backgroundSize: "cover",
+        }}
       >
+        {/*
+          Overlay que tinge o wallpaper com a cor do tema atual.
+          mix-blend-mode: multiply faz a cor se misturar com a imagem sem cobrir o conteúdo.
+          pointer-events: none garante que não bloqueia cliques.
+          transition suaviza a troca de tema.
+        */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 0,
+            background: "rgb(var(--bg-700) / 0.30)",
+            mixBlendMode: "multiply",
+            pointerEvents: "none",
+            transition: "background 0.5s ease",
+          }}
+        />
 
-        <ViewTransitions>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <ViewTransitions>
             <Header />
             {children}
-        </ViewTransitions>
-        
+          </ViewTransitions>
+
+          <ThemeButton />
+        </div>
       </body>
     </html>
   );

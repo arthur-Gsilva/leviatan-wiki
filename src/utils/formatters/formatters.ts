@@ -10,7 +10,7 @@ export const formatCharacterData = (data: CharacterView): FormattedView => {
         description: [
             {title: "Idade", content: data.age},
             {title: "Bando", content: `[[${data.crews[0]}]]`},
-            {title: "Cargo", content: data.titles[1] ? data.titles[1].name : data.titles[0].name},
+            {title: "Cargo", content: data.titles[1]?.name ?? data.titles[0]?.name ?? null},
             {title: "Alcunha", content: data.nickname},
             {title: "Fruta", content: `[[${data.fruits[0]}]]`},
             {title: "Espécie", content: data.species[0]},

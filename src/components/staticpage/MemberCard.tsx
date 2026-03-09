@@ -1,4 +1,4 @@
-
+'use client'
 import Image from "next/image"
 import {Link} from "next-view-transitions"
 import { motion } from "framer-motion"
@@ -52,7 +52,7 @@ export const MemberCard = ({ member}: { member: CardCharacter}) => {
                     className="absolute inset-0 rounded-lg pointer-events-none"
                     variants={{
                         idle: { boxShadow: "inset 0 0 0 0px rgba(143,195,213,0)" },
-                        hovered: { boxShadow: "inset 0 0 0 2px rgba(143,195,213,0.7)" },
+                        hovered: { boxShadow: "inset 0 0 0 2px rgba(var(--p) / 0.8)" },
                     }}
                     transition={{ duration: 0.2 }}
                 />

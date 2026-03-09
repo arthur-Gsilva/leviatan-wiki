@@ -3,7 +3,7 @@ export type CardCharacter = {
   slug: string
   name: string
   image: string | null
-  end_date: string | null
+  end_date?: string | null
 }
 
 export type TitleWithCharacters = {

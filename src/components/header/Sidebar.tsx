@@ -24,24 +24,28 @@ export const MobileSidebar = ({
                 <motion.aside
                     className="fixed top-0 right-0 h-full w-75 z-50 lg:hidden overflow-y-auto"
                     style={{
-                        background: "linear-gradient(160deg, #080f1a 0%, #0d1b2a 100%)",
-                        borderRight: "1px solid rgba(143,195,213,0.2)",
+                        background: "linear-gradient(160deg, rgb(var(--bg-900)) 0%, rgb(var(--bg-800)) 100%)",
+                        borderRight: "1px solid rgb(var(--p) / 0.2)",
                     }}
                     initial={{ x: "100%" }}
                     animate={{ x: 0 }}
                     exit={{ x: "100%" }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
-                    <div className="flex items-center justify-between px-5 py-5 border-b border-[#8FC3D5]/20">
+                    <div
+                        className="flex items-center justify-between px-5 py-5"
+                        style={{ borderBottom: "1px solid rgb(var(--p) / 0.20)" }}
+                    >
                         <span
-                            className="text-[#8FC3D5] text-lg tracking-widest font-bold"
-                            style={{ fontFamily: "'Cinzel', serif" }}
+                            className="text-lg tracking-widest font-bold"
+                            style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p))" }}
                         >
                             OP — LEVIATÃ
                         </span>
                         <button
                             onClick={onClose}
-                            className="text-[#8FC3D5] hover:text-white transition-colors p-1"
+                            className="transition-colors p-1 hover:text-white"
+                            style={{ color: "rgb(var(--p))" }}
                             aria-label="Fechar menu"
                         >
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -69,12 +73,15 @@ export const MobileSidebar = ({
                                         />
                                     </div>
                                     <h3
-                                        className="text-[#8FC3D5] text-xs uppercase tracking-[0.2em] font-semibold"
-                                        style={{ fontFamily: "'Cinzel', serif" }}
+                                        className="text-xs uppercase tracking-[0.2em] font-semibold"
+                                        style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p))" }}
                                     >
                                         {item.label}
                                     </h3>
-                                    <div className="flex-1 h-px bg-[#8FC3D5]/20" />
+                                    <div
+                                        className="flex-1 h-px"
+                                        style={{ background: "rgb(var(--p) / 0.20)" }}
+                                    />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-2 pl-2">

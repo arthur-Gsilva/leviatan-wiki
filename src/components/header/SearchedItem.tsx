@@ -12,18 +12,27 @@ const SkeletonRow = ({ i }: { i: number }) => (
     <motion.div
         key={i}
         className="flex items-center gap-3 p-2 rounded-lg"
-        style={{ background: "rgba(143,195,213,0.04)" }}
+        style={{ background: "rgb(var(--p) / 0.04)" }}
         initial={{ opacity: 0, x: -8 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: i * 0.05 }}
     >
         <div
             className="w-10 h-10 rounded-md shrink-0"
-            style={{ background: "rgba(143,195,213,0.08)", border: "1px solid rgba(143,195,213,0.12)" }}
+            style={{
+                background: "rgb(var(--p) / 0.08)",
+                border: "1px solid rgb(var(--p) / 0.12)",
+            }}
         />
         <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-            <div className="h-2.5 rounded-full w-24 animate-pulse" style={{ background: "rgba(143,195,213,0.15)" }} />
-            <div className="h-2 rounded-full w-14 animate-pulse" style={{ background: "rgba(143,195,213,0.08)" }} />
+            <div
+                className="h-2.5 rounded-full w-24 animate-pulse"
+                style={{ background: "rgb(var(--p) / 0.15)" }}
+            />
+            <div
+                className="h-2 rounded-full w-14 animate-pulse"
+                style={{ background: "rgb(var(--p) / 0.08)" }}
+            />
         </div>
     </motion.div>
 )
@@ -35,31 +44,35 @@ export const SearchedItem = ({ query, data }: Props) => {
         <motion.div
             className="absolute right-0 top-[calc(100%+10px)] w-[320px] rounded-xl z-50 overflow-hidden"
             style={{
-                background: "linear-gradient(135deg, #0d1b2a 0%, #112233 100%)",
-                border: "1px solid rgba(143,195,213,0.20)",
-                boxShadow: "0 16px 48px rgba(0,0,0,0.6)",
+                background: "linear-gradient(135deg, rgb(var(--bg-800)) 0%, rgb(var(--bg-900)) 100%)",
+                border: "1px solid rgb(var(--p) / 0.20)",
+                boxShadow: "0 16px 48px rgb(0 0 0 / 0.6)",
             }}
             initial={{ opacity: 0, y: -8, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
         >
+            {/* Setinha */}
             <div
-                className="absolute -top-1.75 right-4 w-3 h-3 rotate-45"
+                className="absolute -top-1.5 right-4 w-3 h-3 rotate-45"
                 style={{
-                    background: "#0d1b2a",
-                    borderTop: "1px solid rgba(143,195,213,0.20)",
-                    borderLeft: "1px solid rgba(143,195,213,0.20)",
+                    background: "rgb(var(--bg-800))",
+                    borderTop: "1px solid rgb(var(--p) / 0.20)",
+                    borderLeft: "1px solid rgb(var(--p) / 0.20)",
                 }}
             />
 
-            <div className="px-4 pt-4 pb-2 border-b border-[#8FC3D5]/10">
+            <div
+                className="px-4 pt-4 pb-2"
+                style={{ borderBottom: "1px solid rgb(var(--p) / 0.10)" }}
+            >
                 <p
-                    className="text-[#8FC3D5]/60 text-[10px] uppercase tracking-[0.2em]"
-                    style={{ fontFamily: "'Cinzel', serif" }}
+                    className="text-[10px] uppercase tracking-[0.2em]"
+                    style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p) / 0.6)" }}
                 >
                     Resultados para{" "}
-                    <span className="text-[#8FC3D5]">"{query}"</span>
+                    <span style={{ color: "rgb(var(--p))" }}>"{query}"</span>
                 </p>
             </div>
 
@@ -69,14 +82,16 @@ export const SearchedItem = ({ query, data }: Props) => {
                         <Link key={item.id} href={`/wiki/${item.slug}`}>
                             <motion.div
                                 className="flex items-center gap-3 p-2 rounded-lg cursor-pointer group"
-                                style={{ background: "rgba(143,195,213,0.04)" }}
-                                whileHover={{ background: "rgba(143,195,213,0.10)" }}
+                                style={{ background: "rgb(var(--p) / 0.04)" }}
+                                whileHover={{ background: "rgb(var(--p) / 0.10)" } as any}
                                 initial={{ opacity: 0, x: -8 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.05 }}
                             >
-                                <div className="relative w-10 h-10 rounded-md shrink-0 overflow-hidden"
-                                    style={{ border: "1px solid rgba(143,195,213,0.15)" }}>
+                                <div
+                                    className="relative w-10 h-10 rounded-md shrink-0 overflow-hidden"
+                                    style={{ border: "1px solid rgb(var(--p) / 0.15)" }}
+                                >
                                     <Image
                                         src={item.image as string}
                                         alt={item.name}
@@ -94,14 +109,19 @@ export const SearchedItem = ({ query, data }: Props) => {
                                         {item.name}
                                     </span>
                                     <span
-                                        className="text-[#8FC3D5]/50 text-[10px] capitalize truncate"
+                                        className="text-[10px] capitalize truncate"
+                                        style={{ color: "rgb(var(--p) / 0.5)" }}
                                     >
                                         {item.type} · {item.organization}
                                     </span>
                                 </div>
 
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                    className="text-[#8FC3D5]/20 group-hover:text-[#8FC3D5]/60 transition-colors shrink-0">
+                                <svg
+                                    width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                    className="shrink-0 transition-colors"
+                                    style={{ color: "rgb(var(--p) / 0.2)" }}
+                                    onMouseEnter={e => (e.currentTarget as SVGElement).style.color = "rgb(var(--p) / 0.6)"}
+                                >
                                     <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </motion.div>

@@ -7,6 +7,25 @@ import { MemberCard } from "@/components/staticpage/MemberCard"
 import { parseContent } from "@/utils/parseContent"
 import { Fruit } from "@/types/fruit"
 
+const SectionTitle = ({ title }: { title: string }) => (
+    <div className="flex items-center gap-3 mb-4">
+        <div
+            className="w-1 h-6 rounded-full"
+            style={{ background: "linear-gradient(to bottom, rgb(var(--p)), rgb(var(--p) / 0.2))" }}
+        />
+        <h2
+            className="text-white text-xl font-bold tracking-wide"
+            style={{ fontFamily: "'Cinzel', serif" }}
+        >
+            {title}
+        </h2>
+        <div
+            className="flex-1 h-px"
+            style={{ background: "linear-gradient(to right, rgb(var(--p) / 0.3), transparent)" }}
+        />
+    </div>
+)
+
 export const FruitPage = ({ data }: { data: Fruit }) => {
     const activeMembers = data.members.filter(m => !m.end_date)
     const formerMembers = data.members.filter(m => m.end_date)
@@ -14,13 +33,16 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
     return (
         <ContentBox>
             {/* ── Hero ── */}
-            <div className="relative mb-10 pb-8 border-b border-[#8FC3D5]/15">
+            <div
+                className="relative mb-10 pb-8"
+                style={{ borderBottom: "1px solid rgb(var(--p) / 0.15)" }}
+            >
                 <div className="flex gap-6 items-start">
                     <div
                         className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 hidden sm:block"
                         style={{
-                            border: "1px solid rgba(143,195,213,0.2)",
-                            boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
+                            border: "1px solid rgb(var(--p) / 0.2)",
+                            boxShadow: "0 4px 24px rgb(0 0 0 / 0.4)",
                         }}
                     >
                         <Image
@@ -35,8 +57,8 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
 
                     <div className="flex flex-col justify-center gap-2 flex-1">
                         <p
-                            className="text-[#8FC3D5] text-[10px] uppercase tracking-[0.25em]"
-                            style={{ fontFamily: "'Cinzel', serif" }}
+                            className="text-[10px] uppercase tracking-[0.25em]"
+                            style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p))" }}
                         >
                             {data.type ?? "Akuma no Mi"} · {data.popularname}
                         </p>
@@ -44,14 +66,14 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                             className="text-3xl sm:text-4xl font-bold text-white"
                             style={{
                                 fontFamily: "'Cinzel', serif",
-                                textShadow: "0 2px 16px rgba(143,195,213,0.15)",
+                                textShadow: "0 2px 16px rgb(var(--p) / 0.15)",
                             }}
                         >
                             {data.name}
                         </h1>
                         <p
                             className="text-sm leading-relaxed mt-1 max-w-2xl"
-                            style={{ color: "rgba(220,235,245,0.72)" }}
+                            style={{ color: "rgb(220 235 245 / 0.72)" }}
                         >
                             {parseContent(data.description)}
                         </p>
@@ -67,25 +89,10 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1, duration: 0.4 }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div
-                                className="w-1 h-6 rounded-full"
-                                style={{ background: "linear-gradient(to bottom, #8FC3D5, rgba(143,195,213,0.2))" }}
-                            />
-                            <h2
-                                className="text-white text-xl font-bold tracking-wide"
-                                style={{ fontFamily: "'Cinzel', serif" }}
-                            >
-                                Habilidades
-                            </h2>
-                            <div
-                                className="flex-1 h-px"
-                                style={{ background: "linear-gradient(to right, rgba(143,195,213,0.3), transparent)" }}
-                            />
-                        </div>
+                        <SectionTitle title="Habilidades" />
                         <p
                             className="text-sm leading-relaxed whitespace-pre-line"
-                            style={{ color: "rgba(220,235,245,0.78)" }}
+                            style={{ color: "rgb(220 235 245 / 0.78)" }}
                         >
                             {parseContent(data.abilities)}
                         </p>
@@ -99,25 +106,10 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.18, duration: 0.4 }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div
-                                className="w-1 h-6 rounded-full"
-                                style={{ background: "linear-gradient(to bottom, #8FC3D5, rgba(143,195,213,0.2))" }}
-                            />
-                            <h2
-                                className="text-white text-xl font-bold tracking-wide"
-                                style={{ fontFamily: "'Cinzel', serif" }}
-                            >
-                                História
-                            </h2>
-                            <div
-                                className="flex-1 h-px"
-                                style={{ background: "linear-gradient(to right, rgba(143,195,213,0.3), transparent)" }}
-                            />
-                        </div>
+                        <SectionTitle title="História" />
                         <p
                             className="text-sm leading-relaxed whitespace-pre-line"
-                            style={{ color: "rgba(220,235,245,0.78)" }}
+                            style={{ color: "rgb(220 235 245 / 0.78)" }}
                         >
                             {parseContent(data.history)}
                         </p>
@@ -131,36 +123,20 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.26, duration: 0.4 }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div
-                                className="w-1 h-6 rounded-full"
-                                style={{ background: "linear-gradient(to bottom, #8FC3D5, rgba(143,195,213,0.2))" }}
-                            />
-                            <h2
-                                className="text-white text-xl font-bold tracking-wide"
-                                style={{ fontFamily: "'Cinzel', serif" }}
-                            >
-                                Portadores
-                            </h2>
-                            <div
-                                className="flex-1 h-px"
-                                style={{ background: "linear-gradient(to right, rgba(143,195,213,0.3), transparent)" }}
-                            />
-                        </div>
+                        <SectionTitle title="Portadores" />
 
                         <div
                             className="rounded-xl px-5 py-4 flex flex-col gap-6"
                             style={{
-                                background: "rgba(143,195,213,0.04)",
-                                border: "1px solid rgba(143,195,213,0.10)",
+                                background: "rgb(var(--p) / 0.04)",
+                                border: "1px solid rgb(var(--p) / 0.10)",
                             }}
                         >
-                            {/* Portadores atuais */}
                             {activeMembers.length > 0 && (
                                 <div>
                                     <p
-                                        className="text-[#8FC3D5]/60 text-[10px] uppercase tracking-[0.2em] mb-3"
-                                        style={{ fontFamily: "'Cinzel', serif" }}
+                                        className="text-[10px] uppercase tracking-[0.2em] mb-3"
+                                        style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p) / 0.6)" }}
                                     >
                                         Portador
                                     </p>
@@ -177,7 +153,7 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                                                         slug: member.slug,
                                                         name: member.fullName,
                                                         image: member.image,
-                                                        end_date: member.end_date
+                                                        end_date: member.end_date,
                                                     }}
                                                 />
                                             </motion.div>
@@ -186,12 +162,11 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                                 </div>
                             )}
 
-                            {/* Ex-portadores */}
                             {formerMembers.length > 0 && (
                                 <div>
                                     <p
-                                        className="text-[#8FC3D5]/60 text-[10px] uppercase tracking-[0.2em] mb-3"
-                                        style={{ fontFamily: "'Cinzel', serif" }}
+                                        className="text-[10px] uppercase tracking-[0.2em] mb-3"
+                                        style={{ fontFamily: "'Cinzel', serif", color: "rgb(var(--p) / 0.6)" }}
                                     >
                                         Ex-Portador
                                     </p>
@@ -208,7 +183,7 @@ export const FruitPage = ({ data }: { data: Fruit }) => {
                                                         slug: member.slug,
                                                         name: member.fullName,
                                                         image: member.image,
-                                                        end_date: member.end_date
+                                                        end_date: member.end_date,
                                                     }}
                                                 />
                                             </motion.div>

@@ -74,7 +74,7 @@ export default async function Page({ params }: Props) {
                             border: "1px solid rgba(143,195,213,0.18)",
                         }}
                     >
-                        <p className="text-xl text-[#8FC3D5]/80 mb-1 uppercase tracking-widest" style={{ fontFamily: "'Cinzel', serif" }}>
+                        <p className="text-xl mb-1 uppercase tracking-widest" style={{ fontFamily: "'Cinzel', serif" }}>
                             Informações básicas
                         </p>
                         <div className="space-y-1">
@@ -82,7 +82,7 @@ export default async function Page({ params }: Props) {
                                 if (!item.content || item.content == '[[undefined]]') return null
                                 
                                 return (
-                                    <p key={item.title} className="text-[#8FC3D5] text-sm">
+                                    <p key={item.title} className="text-sm">
                                         {item.title}:{" "}
                                         <span className="text-white">
                                             {parseContent(item.content as string)}
@@ -101,12 +101,12 @@ export default async function Page({ params }: Props) {
                         return (
                             <div key={item.title}>
                                 <h2
-                                    className="text-[#8FC3D5] text-center text-2xl"
+                                    className="text-center text-2xl"
                                     style={{ fontFamily: "'Cinzel', serif" }}
                                 >
                                     {item.title}
                                 </h2>
-                                <p className="whitespace-pre-line">
+                                <p className="text-white whitespace-pre-line">
                                     {parseContent(item.content as string)}
                                 </p>
                             </div>

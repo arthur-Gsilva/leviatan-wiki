@@ -11,13 +11,13 @@ interface SearchBarProps {
     onOpenChange?: (open: boolean) => void
 }
 
-export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
+export const SearchBar = ({ onOpenChange }: SearchBarProps) => {
     const [open, setOpen] = useState(false)
     const [query, setQuery] = useState("")
     const [data, setData] = useState<WikiEntry[] | null>([])
     const inputRef = useRef<HTMLInputElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
-    
+
     const [debouncedSearchTerm] = useDebounce(query, 500)
 
     const showResults = query.length >= 2
@@ -42,7 +42,7 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
 
     useEffect(() => {
         if (debouncedSearchTerm && debouncedSearchTerm.length >= 2) {
-            getData(debouncedSearchTerm )
+            getData(debouncedSearchTerm)
         }
     }, [debouncedSearchTerm])
 
@@ -58,32 +58,23 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
 
     return (
         <div ref={containerRef} className="relative flex items-center">
-            <motion.div
-                className="flex items-center gap-2 rounded-full overflow-hidden cursor-pointer"
-                animate={{
-                    width: open ? 260 : 36,
-                    backgroundColor: open
-                        ? "rgba(143,195,213,0.10)"
-                        : "rgba(143,195,213,0.0)",
-                }}
-                whileHover={{
-                    backgroundColor: open
-                        ? "rgba(143,195,213,0.10)"
-                        : "rgba(143,195,213,0.08)",
-                }}
-                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+            {/* Framer-motion não resolve var() em animate, então controlamos via style + transition CSS */}
+            <div
+                className="flex items-center gap-2 rounded-full overflow-hidden cursor-pointer transition-all duration-300"
                 style={{
-                    border: open ? "1px solid rgba(143,195,213,0.25)" : "1px solid transparent",
+                    width: open ? 260 : 36,
+                    background: open ? "rgb(var(--p) / 0.10)" : "rgb(var(--p) / 0.0)",
+                    border: open ? "1px solid rgb(var(--p) / 0.25)" : "1px solid transparent",
                     padding: open ? "6px 12px 6px 10px" : "6px",
                 }}
                 onClick={!open ? handleOpen : undefined}
             >
-                <motion.div
-                    className="shrink-0 text-[#8FC3D5]"
-                    animate={{ rotate: open ? 0 : 0 }}
+                <div
+                    className="shrink-0"
+                    style={{ color: "rgb(var(--p))" }}
                 >
                     <Search size={16} strokeWidth={2} />
-                </motion.div>
+                </div>
 
                 <AnimatePresence>
                     {open && (
@@ -93,8 +84,13 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                             placeholder="Buscar na wiki..."
-                            className="flex-1 bg-transparent outline-none border-none text-white text-sm placeholder:text-[#8FC3D5]/40 min-w-0"
-                            style={{ fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.05em" }}
+                            className="flex-1 bg-transparent outline-none border-none text-white text-sm min-w-0"
+                            style={{
+                                fontFamily: "'Cinzel', serif",
+                                fontSize: "12px",
+                                letterSpacing: "0.05em",
+                                // placeholder via CSS pois não podemos usar var() em className diretamente
+                            }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -108,7 +104,10 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
                     {open && (
                         <motion.button
                             onClick={(e) => { e.stopPropagation(); handleClose() }}
-                            className="shrink-0 text-[#8FC3D5]/50 hover:text-[#8FC3D5] transition-colors"
+                            className="shrink-0 transition-colors"
+                            style={{ color: "rgb(var(--p) / 0.5)" }}
+                            onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "rgb(var(--p))"}
+                            onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgb(var(--p) / 0.5)"}
                             initial={{ opacity: 0, scale: 0.6 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.6 }}
@@ -118,11 +117,11 @@ export const SearchBar =  ({ onOpenChange }: SearchBarProps) => {
                         </motion.button>
                     )}
                 </AnimatePresence>
-            </motion.div>
+            </div>
 
             <AnimatePresence>
                 {open && showResults && (
-                    <SearchedItem 
+                    <SearchedItem
                         query={query}
                         data={data}
                     />

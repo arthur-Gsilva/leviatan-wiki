@@ -1,27 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --p: 143 195 213;
+  --bg-900: 8 15 26;
+  --bg-800: 13 27 42;
+  --bg-700: 10 20 36;
+}
+
+[data-theme="teal"] {
+  --p: 95 191 191;
+  --bg-900: 5 22 20;
+  --bg-800: 8 32 28;
+  --bg-700: 6 26 22;
+}
+
+[data-theme="indigo"] {
+  --p: 123 158 217;
+  --bg-900: 8 10 24;
+  --bg-800: 12 16 38;
+  --bg-700: 9 13 30;
+}
+
+[data-theme="violet"] {
+  --p: 167 139 202;
+  --bg-900: 14 8 24;
+  --bg-800: 22 12 36;
+  --bg-700: 17 9 28;
+}
+
+[data-theme="crimson"] {
+  --p: 196 123 123;
+  --bg-900: 24 6 8;
+  --bg-800: 36 10 12;
+  --bg-700: 28 7 9;
+}
+
+[data-theme="gold"] {
+  --p: 201 168 76;
+  --bg-900: 20 16 5;
+  --bg-800: 30 24 8;
+  --bg-700: 24 19 6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* Usa a variável de fundo escuro do tema atual */
+  background-color: rgb(var(--bg-900));
+  color: #ededed;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,16 +63,13 @@ body {
   animation-duration: 1s !important;
 }
 
-
-/* Adicione isso ao seu globals.css */
-
 /* Custom scrollbar para ContentBox */
 .custom-scrollbar::-webkit-scrollbar {
   width: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(8, 15, 26, 0.4);
+  background: rgb(var(--bg-900) / 0.4);
   border-radius: 8px;
   margin: 8px 0;
 }
@@ -51,35 +77,35 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    rgba(143, 195, 213, 0.4) 0%,
-    rgba(143, 195, 213, 0.6) 50%,
-    rgba(143, 195, 213, 0.4) 100%
+    rgb(var(--p) / 0.4) 0%,
+    rgb(var(--p) / 0.6) 50%,
+    rgb(var(--p) / 0.4) 100%
   );
   border-radius: 8px;
-  border: 2px solid rgba(13, 27, 42, 0.8);
+  border: 2px solid rgb(var(--bg-800) / 0.8);
   transition: all 0.3s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
-    rgba(143, 195, 213, 0.6) 0%,
-    rgba(143, 195, 213, 0.8) 50%,
-    rgba(143, 195, 213, 0.6) 100%
+    rgb(var(--p) / 0.6) 0%,
+    rgb(var(--p) / 0.8) 50%,
+    rgb(var(--p) / 0.6) 100%
   );
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:active {
   background: linear-gradient(
     180deg,
-    rgba(143, 195, 213, 0.7) 0%,
-    rgba(143, 195, 213, 0.9) 50%,
-    rgba(143, 195, 213, 0.7) 100%
+    rgb(var(--p) / 0.7) 0%,
+    rgb(var(--p) / 0.9) 50%,
+    rgb(var(--p) / 0.7) 100%
   );
 }
 
 /* Firefox */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(143, 195, 213, 0.5) rgba(8, 15, 26, 0.4);
+  scrollbar-color: rgb(var(--p) / 0.5) rgb(var(--bg-900) / 0.4);
 }

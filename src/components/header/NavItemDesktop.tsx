@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
@@ -23,13 +25,11 @@ export const NavItemDesktop = ({ item }: { item: NavItem }) => {
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
         >
-            <motion.div
-                className="flex items-center gap-2 px-3 py-2 rounded-xl cursor-pointer select-none"
-                animate={{
-                    backgroundColor: open ? "rgba(143,195,213,0.15)" : "rgba(143,195,213,0)",
+            <div
+                className="flex items-center gap-2 px-3 py-2 rounded-xl cursor-pointer select-none transition-colors duration-200"
+                style={{
+                    background: open ? "rgb(var(--p) / 0.15)" : "transparent",
                 }}
-                whileHover={{ backgroundColor: "rgba(143,195,213,0.15)" }}
-                transition={{ duration: 0.2 }}
             >
                 <div className="relative w-9 h-9 shrink-0">
                     <Image
@@ -53,13 +53,13 @@ export const NavItemDesktop = ({ item }: { item: NavItem }) => {
                     height="10"
                     viewBox="0 0 10 10"
                     fill="none"
-                    className="text-[#8FC3D5]"
+                    style={{ color: "rgb(var(--p))" }}
                     animate={{ rotate: open ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
                 >
                     <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </motion.svg>
-            </motion.div>
+            </div>
 
             <DesktopDropdown item={item} isOpen={open} />
         </li>

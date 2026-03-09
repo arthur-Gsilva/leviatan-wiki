@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 
 export const parseContent = (text: string) => {
@@ -11,8 +12,8 @@ export const parseContent = (text: string) => {
 
             const slug = name
                 .toLowerCase()
-                .replace(/-/g, "_")     // troca hífen por _
-                .replace(/\s+/g, "_")   // troca espaços por _
+                .replace(/-/g, "_")
+                .replace(/\s+/g, "_")
 
             return (
                 <Link
@@ -20,9 +21,11 @@ export const parseContent = (text: string) => {
                     href={`/wiki/${slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#8FC3D5] font-medium underline underline-offset-2 
-                     hover:decoration-[#8FC3D5]/40 decoration-[#8FC3D5] 
-                     :text-white transition-colors duration-200"
+                    className="font-medium underline underline-offset-2 transition-colors duration-200 hover:text-gray-200!"
+                    style={{
+                        color: "color-mix(in srgb, rgb(var(--p)), white 30%)",
+                        textDecorationColor: "rgb(var(--p) / 0.5)",
+                    }}
                 >
                     {name}
                 </Link>

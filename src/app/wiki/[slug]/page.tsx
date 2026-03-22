@@ -10,7 +10,7 @@ import { parseContent } from "@/utils/parseContent"
 
 import Image from "next/image"
 
-export const revalidate = 600
+export const revalidate = 100
 
 export const generateMetadata = async ({ params }: Props) => {
     const { slug } = await params

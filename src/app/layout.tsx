@@ -40,9 +40,10 @@ export default function RootLayout({
       <body
         className="min-h-screen min-w-screen"
         style={{
-          backgroundImage: "url('https://images.wallpapersden.com/image/download/one-piece-anime_am1nZmuUmZqaraWkpJRobWllrWdma2U.jpg')",
+          backgroundImage: "url('/logo2.png')",
           backgroundPosition: 'center',
           backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/*
@@ -57,8 +58,8 @@ export default function RootLayout({
             position: "fixed",
             inset: 0,
             zIndex: 0,
-            background: "rgb(var(--bg-700) / 0.30)",
-            mixBlendMode: "multiply",
+            background: "rgb(var(--bg-700) / 0.10)",
+            mixBlendMode: "plus-darker",
             pointerEvents: "none",
             transition: "background 0.5s ease",
           }}

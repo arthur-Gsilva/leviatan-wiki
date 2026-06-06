@@ -8,6 +8,11 @@ const piratasChildren = [
         label: "Piratas",
         image: "/piratas/piratas.jpg",
         link: "/wiki/piratas"
+    },
+    {
+        label: "Hunters",
+        image: "https://i.pinimg.com/736x/7a/50/7c/7a507cd44f6d78c56b7e5dfcd87eb084.jpg",
+        link: "/wiki/hunters"
     }
 ]
 

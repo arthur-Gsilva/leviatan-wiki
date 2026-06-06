@@ -22,7 +22,6 @@ export const generateMetadata = async ({ params }: Props) => {
     }
 }
 
-
 type Props = {
     params: Promise<{ slug: string }>
 }

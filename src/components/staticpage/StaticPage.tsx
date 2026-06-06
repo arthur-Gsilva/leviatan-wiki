@@ -9,7 +9,6 @@ import { SectionBlock } from "./GroupBlock"
 export const StaticPage = ({ data }: { data: CategoryFull }) => {
     return (
         <ContentBox>
-            {/* Hero da categoria */}
             <div
                 className="relative mb-10 pb-8"
                 style={{ borderBottom: "1px solid rgb(var(--p) / 0.15)" }}
@@ -58,7 +57,6 @@ export const StaticPage = ({ data }: { data: CategoryFull }) => {
                 </div>
             </div>
 
-            {/* Seções */}
             <div className="flex flex-col gap-10">
                 {data.sections.map((section, i) => (
                     <SectionBlock key={section.section_id} section={section} index={i} />

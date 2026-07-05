@@ -1,12 +1,14 @@
 'use client'
 
+import { safeLocalStorage } from "@/utils/safeLocalStorage"
 import { useEffect, useState } from "react"
 
 export const useTheme = () => {
     const [theme, setTheme] = useState("default")
 
     useEffect(() => {
-        const saved = localStorage.getItem("wiki-theme")
+        const storage = safeLocalStorage();
+        const saved = storage?.getItem("wiki-theme")
         if (saved) {
             document.documentElement.setAttribute("data-theme", saved)
             setTheme(saved)
@@ -15,7 +17,8 @@ export const useTheme = () => {
 
     const changeTheme = (newTheme: string) => {
         document.documentElement.setAttribute("data-theme", newTheme)
-        localStorage.setItem("wiki-theme", newTheme)
+        const storage = safeLocalStorage();
+        storage?.setItem("wiki-theme", newTheme)
         setTheme(newTheme)
     }
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Palette } from "lucide-react"
+import { safeLocalStorage } from "@/utils/safeLocalStorage"
 
 const themes = [
     { label: "default", name: "Oceano",   p: "rgb(143 195 213)", bg: "rgb(8 15 26)"  },
@@ -13,13 +14,14 @@ const themes = [
 ]
 
 export const ThemeButton = () => {
+    const storage = safeLocalStorage();
     const [theme, setTheme] = useState("default")
     const [open, setOpen] = useState(false)
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
         setMounted(true)
-        const saved = localStorage.getItem("wiki-theme")
+        const saved = storage?.getItem("wiki-theme")
         if (saved) {
             document.documentElement.setAttribute("data-theme", saved)
             setTheme(saved)
@@ -28,7 +30,7 @@ export const ThemeButton = () => {
 
     const changeTheme = (newTheme: string) => {
         document.documentElement.setAttribute("data-theme", newTheme)
-        localStorage.setItem("wiki-theme", newTheme)
+        storage?.setItem("wiki-theme", newTheme)
         setTheme(newTheme)
         setOpen(false)
     }
@@ -41,7 +43,7 @@ export const ThemeButton = () => {
 
             {open && (
                 <div
-                    className="flex flex-col gap-1 rounded-xl p-2 mb-1 min-w-[160px]"
+                    className="flex flex-col gap-1 rounded-xl p-2 mb-1 min-w-40"
                     style={{
                         background: `linear-gradient(135deg, rgb(var(--bg-800) / 0.98), rgb(var(--bg-900) / 0.99))`,
                         border: "1px solid rgb(var(--p) / 0.20)",

@@ -28,14 +28,22 @@ export default function RootLayout({
     // o atributo data-theme antes da hidratação do React, causando mismatch
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              const t = localStorage.getItem('wiki-theme');
-              if (t) document.documentElement.setAttribute('data-theme', t);
-            })();
-          `
-        }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function() {
+        try {
+          const t = window.localStorage?.getItem('wiki-theme');
+          if (t) {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (_) {
+          // Executando em iframe sandboxado (Foundry)
+        }
+      })();
+    `
+          }}
+        />
       </head>
       <body
         className="min-h-screen min-w-screen"
